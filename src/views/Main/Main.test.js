@@ -1,6 +1,0 @@
-
-
-
-describe('Main', ()=> {
-    it('S')
-})

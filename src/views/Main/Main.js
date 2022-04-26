@@ -5,11 +5,17 @@ import Search from '../../components/Search';
 import './Main.css';
 
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Main() {
-    const { selectedType, pokemon, setPokemon, search, order, setTypes, load, setLoad } = usePokeContex();
-    
+    // const { selectedType, pokemon, setPokemon, search, order, setTypes } = usePokeContex();
+    const [pokemon, setPokemon] = useState([]);
+    const [selectedType, setSelectedType] = useState('All');
+    const [search, setSearch] = useState('');
+    const [order, setOrder] = useState('asc');
+    const [types, setTypes] = useState([]);
+    const [load, setLoad] = useState(false);
+
 
     useEffect(() => {
         const allPokemon = async () => {
@@ -19,9 +25,9 @@ export default function Main() {
           setTypes(['All', ...pokeTypes]);
           
     
-          setTimeout(() => {
-            setLoad(false);
-          }, 5000);  
+          // setTimeout(() => {
+            // setLoad(false);
+       
         };
         allPokemon();
       }, [setPokemon, setTypes, setLoad]);
@@ -46,18 +52,18 @@ export default function Main() {
   return (
     <>
     <div className='inputs'>
-        <Search callback={searchPokemon}/>
+        <Search search={search} setSearch={setSearch} callback={searchPokemon} />
         
       </div>
-    <div className='pokecard'>
         {pokemon.map((grab) => (
-          <div className='stats' key={grab.id}> 
+    <article key={grab.id} className='pokecard'>
+          <div className='stats' > 
             <h3>{grab.pokemon}</h3>
             <img alt='Image of a pokemon' src={grab.url_image}></img>
             <p>HP: {grab.hp} Hidden ability: ({grab.ability_hidden}) Speed: ({grab.speed}) Attack: ({grab.attack}) Defense: ({grab.defense})</p>
           </div>
+      </article> 
         ))}
-      </div> 
     </>
   )
 }
