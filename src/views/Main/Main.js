@@ -23,11 +23,12 @@ export default function Main() {
       const pokeTypes = await fetchType();
       setTypes(['All', ...pokeTypes]);
 
-      setTimeout(() => {
-        setLoad(false);
-      }, 2000);
-    };
-
+    //   setTimeout(() => {
+    //     setLoad(false);
+    //   }, 2000);
+    // };
+  
+    
     allPokemon();
   }, [setPokemon, setTypes, setLoad]);
 
