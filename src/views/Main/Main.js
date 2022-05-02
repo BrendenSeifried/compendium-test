@@ -23,28 +23,19 @@ export default function Main() {
       const pokeTypes = await fetchType();
       setTypes(['All', ...pokeTypes]);
 
-      // setTimeout(() => {
-      // setLoad(false);
+      setTimeout(() => {
+        setLoad(false);
+      }, 2000);
     };
     allPokemon();
   }, [setPokemon, setTypes, setLoad]);
-
-  // useEffect(() => {
-  //   const userType = async () => {
-  //     const matchingPokemon = await fetchByType(selectedType, null, order);
-  //     setPokemon(matchingPokemon);
-  //   };
-  //   if (selectedType) {
-  //     userType();
-  //   }
-  // }, [selectedType, order, setPokemon]);
 
   const searchPokemon = async () => {
     const data = await fetchByType(selectedType, search, null);
     setPokemon(data);
   };
 
-  if (load) return <div className="loader">Loading, please wait.</div>;
+  if (load) return <h1 className="loader">Loading</h1>;
 
   return (
     <>
