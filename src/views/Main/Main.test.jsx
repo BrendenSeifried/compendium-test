@@ -5,15 +5,11 @@ import Main from './Main';
 
 describe('Main', () => {
   it('Should pass 10 per page test', async () => {
-    render(
-      <PokeProvider>
-        <Main />
-      </PokeProvider>
-    );
+    render(<Main />);
 
-    {
-      timeout: 3000;
-    }
+    // {
+    //   timeout: 3000;
+    // }
     // screen.getByText(/loading/i);
     screen.debug();
 
