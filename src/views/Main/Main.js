@@ -1,5 +1,6 @@
 import { fetchByType, fetchPokemon, fetchType } from '../../services/pokemon';
 import { usePokeContex } from '../../context/PokeContext';
+
 import Search from '../../components/Search';
 
 import './Main.css';
@@ -14,7 +15,7 @@ export default function Main() {
   const [search, setSearch] = useState('');
   const [order, setOrder] = useState('asc');
   const [types, setTypes] = useState([]);
-  const [load, setLoad] = useState(true);
+  // const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const allPokemon = async () => {
@@ -36,7 +37,7 @@ export default function Main() {
     setPokemon(data);
   };
 
-  if (load) return <h1 className="loader">Loading</h1>;
+  // if (load) return <h1 className="loader">Loading</h1>;
 
   return (
     <>

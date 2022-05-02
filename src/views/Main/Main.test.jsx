@@ -12,21 +12,18 @@ describe('Main', () => {
     // }
     // screen.getByText(/loading/i);
     screen.debug();
+    await screen.findAllByAltText('Image of a pokemon');
 
-    await waitFor(async () => {
-      await screen.findAllByAltText('Image of a pokemon');
+    const number = await screen.findAllByRole('article');
+    expect(number.length).toBe(10);
 
-      const number = await screen.findAllByRole('article');
-      expect(number.length).toBe(10);
+    const preset = await screen.findByPlaceholderText('Search Pokemon');
+    userEvent.type(preset, 'pikachu');
 
-      const preset = await screen.findByPlaceholderText('Search Pokemon');
-      userEvent.type(preset, 'pikachu');
+    const button = screen.getByRole('button');
+    userEvent.click(button);
 
-      const button = screen.getByRole('button');
-      userEvent.click(button);
-
-      const pika = await screen.findByText('pikachu');
-      expect(pika).toBeInTheDocument();
-    });
+    const pika = await screen.findByText('pikachu');
+    expect(pika).toBeInTheDocument();
   });
 });
