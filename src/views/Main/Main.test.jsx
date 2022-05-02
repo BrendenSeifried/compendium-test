@@ -12,7 +12,7 @@ describe('Main', () => {
     );
 
     {
-      timeout: 2000;
+      timeout: 3000;
     }
     screen.getByText(/loading/i);
     screen.debug();

@@ -27,6 +27,7 @@ export default function Main() {
         setLoad(false);
       }, 2000);
     };
+
     allPokemon();
   }, [setPokemon, setTypes, setLoad]);
 
