@@ -14,7 +14,7 @@ export default function Main() {
   const [search, setSearch] = useState('');
   const [order, setOrder] = useState('asc');
   const [types, setTypes] = useState([]);
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const allPokemon = async () => {
@@ -30,7 +30,7 @@ export default function Main() {
   
     
     allPokemon();
-  }, [setPokemon, setTypes, setLoad]);
+  }, [setPokemon, setTypes, ]);
 
   const searchPokemon = async () => {
     const data = await fetchByType(selectedType, search, null);

@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { PokeProvider } from '../../context/PokeContext';
+// import { PokeProvider } from '../../context/PokeContext';
 import Main from './Main';
 
 describe('Main', () => {
