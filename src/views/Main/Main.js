@@ -30,7 +30,7 @@ export default function Main() {
   
     
     allPokemon();
-  }, [setPokemon, setTypes, ]);
+  }, [setPokemon, setTypes, ];
 
   const searchPokemon = async () => {
     const data = await fetchByType(selectedType, search, null);
