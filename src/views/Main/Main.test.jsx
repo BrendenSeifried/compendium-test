@@ -10,7 +10,7 @@ describe('Main', () => {
     // {
     //   timeout: 3000;
     // }
-    // screen.getByText(/loading/i);
+    screen.getByText(/loading/i);
     screen.debug();
     await screen.findAllByAltText('Image of a pokemon');
 
