@@ -1,0 +1,101 @@
+.pokecard{
+  display:flex;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+}
+
+.pokecard img{
+    height: 200px;
+}
+
+.selection {
+  padding: 50px;
+  background-color: red;
+  color:aliceblue;
+  /* border: 5px rgb(250, 0, 0) solid; */
+}
+
+.stats {
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    margin: 200px;
+    border: 4mm ridge rgba(211, 220, 50, .6);
+    background-color: rgba(160, 12, 12, 0.349);
+    width:550px;
+    height:200px;
+}
+
+ .inputs {
+  /* padding: 10px;  */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  /* padding: 100px; */
+  border: 3px rgba(0, 0, 0, 0.445) solid;
+  /* margin: 10px; */
+  background-color: rgba(12, 11, 11, 0.774);
+  color: aliceblue;
+
+} 
+
+.stats p {
+    font-weight: bolder;
+}
+
+
+.main-img{
+    background: no-repeat center center fixed;
+    object-fit: fill;
+}
+.loader{
+    display: block;
+    position: center;
+    height: 32px;
+    width: 200px;
+    background: #fff;
+    border:2px solid #fff;
+    color: rgb(3, 2, 2);
+    overflow: hidden;
+  }
+  .loader::before{
+    content: '';
+    background: rgba(255, 0, 0, 0.459);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: loading 5s linear infinite;
+  }
+  .loader:after{
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 100px;
+    line-height: 32px;
+    color: rgb(5, 4, 8);
+    mix-blend-mode: difference;
+    animation: percentage 5s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% { width: 0 }
+    100% { width: 100% }
+  }
+  @keyframes percentage {
+     1% {content: 'Finding Pokemon...'}
+     50% {content: 'Battling Pokemon...'}
+     100% {content: 'Caught em All!'}
+  }
+  
+  
